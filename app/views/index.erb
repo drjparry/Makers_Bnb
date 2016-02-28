@@ -1,16 +1,19 @@
 <h1 id="page_title">Makers BnB Spaces!</h1>
 
-<section id='spaces_list'>
+<section id='container'>
   <% @spaces.each do |space| %>
-    <section id="<%= space.id %>">
-      <p>Name: <%= space.name %></p><br>
-      <p>Description: <%= space.description %></p><br>
-      <p>Price:<%= space.price %></p><br>
-      <p>Street:<%= space.street %></p><br>
-      <p>City:<%= space.city %></p><br>
+    <section id="spaces_list">
+      <p id='space_price'>£<%= space.price.capitalize %> per night</p>
+      <p id='space_name'><%= space.name.capitalize %></p><br>
+      <p id='space_description'><%= space.description.capitalize %></p><br>
+
+      <p id='space_street'><%= space.street.capitalize %></p>
+      <p id='space_city'><%= space.city.capitalize %></p><br>
       <form action='/making_a_request'>
+
         <input type='hidden' name= 'space_id' value= '<%= space.id %>'>
-        <input type='submit' value= 'Make a request'>
+         <button class='request_button' type='submit'>Make a request</button>
+
       </form>
     </section>
   <% end %>

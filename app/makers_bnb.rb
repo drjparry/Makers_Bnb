@@ -1,7 +1,7 @@
 ENV['RACK_ENV'] ||= 'development'
 
 require_relative 'requirements'
-require_relative 'controllers/messenger'
+
 
 
 class MakersBnB < Sinatra::Base

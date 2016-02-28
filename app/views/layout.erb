@@ -2,21 +2,33 @@
 <html>
   <head>
     <title>Makers_Bnb</title>
+    <link href="<%= url('reset.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('styles.css') %>" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
+    <div id='picture_container'>
     <header id="top_bar">
 
+      <% if current_user %>
+      <p id="welcome">Welcome, <%= current_user.first_name %>.</p>
+    <% end %>
+
+
       <form action="/">
-        <input type='submit' value='Home'>
+        <button class ='top_bar_button'type='submit'>Home</button>
       </form>
+
 
       <% if @current_user %>
         <% if request.path_info != '/space_new' %>
 
           <form action="/space_new">
-            <input class="top_bar_button" type='submit' value='List a Space'>
+            <button class="top_bar_button" type='submit' value='List a Space'>Log in</button>
           </form>
+
+
 
         <% end %>
 
@@ -49,8 +61,10 @@
             </form>
           <% end %>
         <% end %>
-    </header>
+      </header>
 
+      <h1 id='main_title'>Welcome to Makers BnB</h1>
+    </div>
     <% if flash[:errors] && !flash[:errors].empty? %>
       <section id="error_section">
         <p>Please refer to the following errors below:</p>
@@ -68,9 +82,7 @@
       </section>
     <% end %>
 
-    <% if current_user %>
-      <p id="welcome">Welcome, <%= current_user.first_name %>.</p>
-    <% end %>
+
 
     <%= yield %>
 
