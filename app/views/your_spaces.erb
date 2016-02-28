@@ -1,15 +1,16 @@
 <h1 id="page_title">Your spaces</h1>
 
 <% if @user_space %>
-<section class="container">
-   <% @user_space.each do |space| %>
-     <section id="<%= space.id %>">
-      <p>Name: <%= space.name %></p><br>
-      <p>Description: <%= space.description %></p><br>
-      <p>Price: <%= space.price %></p><br>
-      <p>Street: <%= space.street %></p><br>
-      <p>City: <%= space.city %></p><br>
-      <p>Host Email: <%= space.host_email %></p><br>
+<% @user_space.each do |space| %>
+
+
+     <section id="spaces_list">
+
+      <p><%= space.name %></p><br>
+      <p><%= space.description %></p><br>
+      <p><%= space.price %></p><br>
+      <p><%= space.street %></p><br>
+      <p><%= space.city %></p><br>
       <form action=/update_space>
         <input type='hidden' name= 'space_id' value= '<%= space.id %>'>
         <input type='submit' value= 'Edit'>
@@ -23,7 +24,6 @@
         <input type='date' name='end_date'>
       </form>
      </section>
-</section>
   <% end %>
 
 <% else %>

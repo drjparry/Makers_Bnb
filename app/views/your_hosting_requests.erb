@@ -1,7 +1,8 @@
 <h1 id="page_title">Your hosting requests</h1>
 
 <% @current_user.spaces.each do |space| %>
- <section id="container">
+ <section class="container">
+
  <%if space.bookings %>
    <% space.bookings.each do |booking| %>
     <% if booking.confirmed == 'unconfirmed' || booking.confirmed == 'confirmed' %>

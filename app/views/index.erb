@@ -1,20 +1,20 @@
 <h1 id="page_title">Makers BnB Spaces!</h1>
 
 <section id='container'>
-  <% @spaces.each do |space| %>
-    <section id="spaces_list">
-      <p id='space_price'>£<%= space.price.capitalize %> per night</p>
-      <p id='space_name'><%= space.name.capitalize %></p><br>
-      <p id='space_description'><%= space.description.capitalize %></p><br>
+  <% @spaces.reverse.each do |space| %>
+  <section id="spaces_list">
+    <p id='space_price'>£<%= space.price.capitalize %> per night</p>
+    <p id='space_name'><%= space.name.capitalize %></p><br>
+    <p id='space_description'><%= space.description.capitalize %></p><br>
 
-      <p id='space_street'><%= space.street.capitalize %></p>
-      <p id='space_city'><%= space.city.capitalize %></p><br>
-      <form action='/making_a_request'>
+    <p id='space_street'><%= space.street.capitalize %></p>
+    <p id='space_city'><%= space.city.capitalize %></p><br>
+    <form action='/making_a_request'>
 
-        <input type='hidden' name= 'space_id' value= '<%= space.id %>'>
-         <button class='request_button' type='submit'>Make a request</button>
+      <input type='hidden' name= 'space_id' value= '<%= space.id %>'>
+      <button class='request_button' type='submit'>Make a request</button>
 
-      </form>
-    </section>
+    </form>
+  </section>
   <% end %>
 </section>

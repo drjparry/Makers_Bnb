@@ -20,16 +20,14 @@ Potential renters request spaces that are listed as being available within their
 
 Hosts list their spaces, define when their spaces are free, and choose whether to accept or reject rental requests from other users
 
-Link to web application http: .... .heroku.app
+
 
 ##Visual Instructions:
 
 1) Landing Page. First sign up for an account
 
 
-
 2) Once successfully signed in, you are automatically signed in. Congratulations! You can now either browse available spaces and make a rental request or create a new space listing
-
 
 
 3) To act as a host, create a new space listing
@@ -49,9 +47,9 @@ Database:
 
 
 Built in Ruby:
--For MVP functionality we use Sinatra, a DSL that acts as our router/controller file and simplifies the build process
--For a (..% coverage) we use both Capybara and RSPEC
--We use a Rakefile to automatically run upgrades and migrations, and a DB cleaner to keep testing accurate
+-For the server we use Sinatra, a DSL that acts as our router/controller file and simplifies the build process
+-For testing we use both Capybara and RSPEC
+-We use a Rakefile to run upgrades and migrations, and a DB cleaner to keep testing isolated.
 
 
 Installation:
@@ -63,7 +61,6 @@ $ rake auto_migrate
 $ rspec
 $ rackup
 
-##**User Stories:**
 =============
 
 **Headline specifications:**

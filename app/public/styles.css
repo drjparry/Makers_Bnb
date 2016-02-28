@@ -3,6 +3,15 @@ body {
  background-color: #FFF1DB;
 }
 
+h2 {
+  text-align: center;
+}
+
+h3 {
+  padding-top: 5px;
+  padding-bottom: 2px;
+
+}
 
 #top_bar {
   width: 100%;
@@ -76,7 +85,7 @@ body {
   margin-left: auto;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 3px;
   border-style: solid;
   border-width: 5px;
   border-color: #E87C60;
@@ -84,7 +93,7 @@ body {
 }
 
 .container {
-  text-align: left;
+  text-align: center;
   padding-left: 30px;
   background-color: #FF9E6A;
   width: 60%;
@@ -92,6 +101,10 @@ body {
   margin-left: auto;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #E87C60;
 
 
 }
@@ -131,10 +144,30 @@ body {
   border-radius: 5px;
   background-color: rgba(255,255,255,0);
   color: black;
+  float: center;
+
 }
 
 input[type=text] {
+  background-color: #FFF1DB;
+  padding-left: 5px;
 
+}
+
+input[type=number]{
+  background-color: #FFF1DB;
+}
+input[type=number]{
+  background-color: #FFF1DB;
+}
+
+textarea.text_area {
+  background-color: #FFF1DB;
+}
+
+.label {
+  padding-top: 30px;
+  padding-bottom: 30px;
 
 }
 

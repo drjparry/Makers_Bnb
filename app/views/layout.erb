@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Makers_Bnb</title>
-    <link href="<%= url('reset.css') %>" rel="stylesheet" type="text/css" />
-    <link href="<%= url('styles.css') %>" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
-  </head>
+<head>
+  <title>Makers_Bnb</title>
+  <link href="<%= url('reset.css') %>" rel="stylesheet" type="text/css" />
+  <link href="<%= url('styles.css') %>" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
+</head>
 
-  <body>
-    <div id='picture_container'>
+<body>
+  <div id='picture_container'>
     <header id="top_bar">
 
       <% if current_user %>
-      <p id="welcome">Welcome, <%= current_user.first_name %>.</p>
-    <% end %>
+      <p id="welcome">Welcome, <%= current_user.first_name.capitalize %></p>
+      <% end %>
 
 
       <form action="/">
@@ -22,69 +22,69 @@
 
 
       <% if @current_user %>
-        <% if request.path_info != '/space_new' %>
+      <% if request.path_info != '/space_new' %>
 
-          <form action="/space_new">
-            <button class="top_bar_button" type='submit' value='List a Space'>Log in</button>
-          </form>
+      <form action="/space_new">
+        <button class="top_bar_button" type='submit' value='List a Space'>List a space</button>
+      </form>
 
 
 
-        <% end %>
+      <% end %>
 
-        <form method='post' action='/log_out'>
-          <input type='hidden' name='_method' value='delete'>
-          <input class="top_bar_button" type='submit' value='Log out'>
-        </form>
+      <form method='post' action='/log_out'>
+        <input type='hidden' name='_method' value='delete'>
+        <input class="top_bar_button" type='submit' value='Log out'>
+      </form>
 
-        <form action='/your_hosting_requests'>
-          <button class="top_bar_button" type='submit'>Your hosting requests</button>
-        </form>
+      <form action='/your_hosting_requests'>
+        <button class="top_bar_button" type='submit'>Your hosting requests</button>
+      </form>
 
-        <form action='/your_spaces'>
-          <button class="top_bar_button" type='submit'>Your spaces</button>
-        </form>
+      <form action='/your_spaces'>
+        <button class="top_bar_button" type='submit'>Your spaces</button>
+      </form>
 
-        <form action='/your_requests'>
-          <button class="top_bar_button" type='submit'>Your requests</button>
-        </form>
+      <form action='/your_requests'>
+        <button class="top_bar_button" type='submit'>Your requests</button>
+      </form>
 
       <% else %>
 
-        <form method="get" action="/sign_up">
-          <button class="top_bar_button" type="submit">Sign Up</button>
-        </form>
+      <form method="get" action="/sign_up">
+        <button class="top_bar_button" type="submit">Sign Up</button>
+      </form>
 
-          <% if request.path_info != '/log_in' %>
-            <form method="get" action="/log_in">
-              <button class="top_bar_button" type="submit">Log in</button>
-            </form>
-          <% end %>
-        <% end %>
-      </header>
+      <% if request.path_info != '/log_in' %>
+      <form method="get" action="/log_in">
+        <button class="top_bar_button" type="submit">Log in</button>
+      </form>
+      <% end %>
+      <% end %>
+    </header>
 
-      <h1 id='main_title'>Welcome to Makers BnB</h1>
-    </div>
-    <% if flash[:errors] && !flash[:errors].empty? %>
-      <section id="error_section">
-        <p>Please refer to the following errors below:</p>
-        <ul id='errors'>
-          <% flash[:errors].each do |error| %>
-            <li><%= error %></li>
-          <% end %>
-        </ul>
-      </section>
-    <% end %>
+    <h1 id='main_title'>Welcome to Makers BnB</h1>
+  </div>
+  <% if flash[:errors] && !flash[:errors].empty? %>
+  <section id="error_section">
+    <p>Please refer to the following errors below:</p>
+    <ul id='errors'>
+      <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+    </ul>
+  </section>
+  <% end %>
 
-    <% if flash[:notice] %>
-      <section id="notice_section">
-        <%= flash[:notice] %>
-      </section>
-    <% end %>
+  <% if flash[:notice] %>
+  <section id="notice_section">
+    <%= flash[:notice] %>
+  </section>
+  <% end %>
 
 
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>

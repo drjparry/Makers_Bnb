@@ -1,20 +1,20 @@
 <h1 id="page_title">Your bookings</h1>
 
   <% @current_user.bookings.each do |bookings| %>
-    <section id="container">
+    <section class="container">
       <h2><%= bookings.space.name %></h2>
       <% if bookings.calculate_stay.to_i > 1 %>
         <h3>Stay: <%= bookings.calculate_stay.to_i%> days.</h3>
       <% else %>
         <h3>Stay: <%= bookings.calculate_stay.to_i%> day.</h3>
       <% end %>
-      <h3>Price: <%= (bookings.calculate_stay.to_i) * (bookings.space.price.to_i)%></h3>
+      <h3>Price <%= (bookings.calculate_stay.to_i) * (bookings.space.price.to_i)%></h3>
       <ul>
-        <li>Start Date: <%= bookings.start_date %> </li>
-        <li>End Date: <%= bookings.end_date %> </li>
-        <li>Message: <%= bookings.message %> </li>
-        <li>Number of Guests: <%= bookings.guest_number %> </li>
-        <li>Confirmation status: <%= bookings.confirmed %> </li>
+        <h3>Start Date: <%= bookings.start_date %> </h3>
+        <h3>End Date: <%= bookings.end_date %> </h3>
+        <h3>Message: <%= bookings.message %> </h3>
+        <h3>Number of Guests: <%= bookings.guest_number %> </h3>
+        <h3>Confirmation status: <%= bookings.confirmed %> </h3>
       </ul>
 
       <% if bookings.confirmed == 'confirmed'%>
