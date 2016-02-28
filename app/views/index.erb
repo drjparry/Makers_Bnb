@@ -13,8 +13,13 @@
 
       <input type='hidden' name= 'space_id' value= '<%= space.id %>'>
       <button class='request_button' type='submit'>Make a request</button>
+      <form action='/more_info'>
+        <input type='hidden' name= 'space_id' value= '<%= space.id %>'>
+        <input type='submit' value= 'More Info'>
+      </form>
 
     </form>
   </section>
+
   <% end %>
 </section>
